@@ -18,8 +18,7 @@ const destinationSchema = new Schema({
 const flightSchema = new Schema({
   airline: {
     type: String,
-    enum: ["American", "Delta", "Southwest", "United"],
-    default: "N/A",
+    enum: ["American", "Southwest", "United"],
   },
   airport: {
     type: String,
@@ -30,11 +29,11 @@ const flightSchema = new Schema({
     type: Number,
     min: 10,
     max: 9999,
-    default: "N/A",
   },
   departs: {
     type: Date,
     default: function () {
+      // Default to a year from date created
       return new Date(new Date().setFullYear(new Date().getFullYear() + 1));
     },
   },

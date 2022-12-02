@@ -26,7 +26,10 @@
           <td><%= f.airline %></td>
           <td><%= f.airport %></td>
           <td><%= f.flightNo %></td>
-          <td><%= f.departs %></td>
+          <td>
+            <%= f.departs.toLocaleString(undefined, {dateStyle: "medium",
+            timeStyle: "short"}) %>
+          </td>
         </tr>
         <% }) %>
       </tbody>
