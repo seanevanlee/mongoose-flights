@@ -8,4 +8,6 @@ router.get("/new", flightCtrl.new);
 router.get("/", flightCtrl.index);
 router.post("/", flightCtrl.create);
 // need to tell server what to do with post request
+router.get("/:id", flightCtrl.show);
+
 module.exports = router;

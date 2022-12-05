@@ -17,8 +17,9 @@
         <tr>
           <th>Airline Company</th>
           <th>Airport</th>
-          <th>Flight Number</th>
+          <th>Flight</th>
           <th>Departing</th>
+          <th>Know More Here</th>
         </tr>
       </thead>
       <tbody>
@@ -27,10 +28,8 @@
           <td><%= f.airline %></td>
           <td><%= f.airport %></td>
           <td><%= f.flightNo %></td>
-          <td>
-            <%= f.departs.toLocaleString(undefined, {dateStyle: "medium",
-            timeStyle: "short"}) %>
-          </td>
+          <td><%= f.departs %></td>
+          <td><a href="/flights/<%= f._id %>">More Info Here</a></td>
         </tr>
         <% }) %>
       </tbody>
