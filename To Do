@@ -1,9 +1,0 @@
-Part 1:
-AAU, I want to create flights by entering the information on a page (new view) that has a form and submitting it.
-	a) Form is up, but “404 NOT FOUND” upon submission
-        b) Figure out POST request
-        c) Had closed off the Mongoose method so that the callback function never triggered
-        
-Part 2:
-
-Part 3:
