@@ -68,7 +68,8 @@
     <h5>No Destinations Planned</h5>
     <% } %>
     <br /><br />
-    <form action="/flights/<%= flight._id %>/ticket" method="POST">
+    <form action="/tickets/" <%="flight._id" %>
+      method="POST">
       <label
         >Seat: <input name="seat" required pattern="[A-F][1-9]\d?" /> </label
       ><br />

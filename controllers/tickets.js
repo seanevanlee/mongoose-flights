@@ -4,6 +4,7 @@ const Ticket = require("../models/ticket");
 module.exports = {
   new: newTicket,
   create,
+  show,
 };
 
 function create(req, res) {
@@ -24,4 +25,13 @@ function create(req, res) {
 }
 function newTicket(req, res) {
   res.render("tickets/new", { flight: req.params.id });
+}
+
+function show(req, res) {
+  Ticket.findById(req.params.id, function (err, ticketDoc) {
+    // pass in ID to ticket and get info from endpt
+    console.log(ticketDoc);
+
+    res.render("flights/show", { title: "Ticket Details", flight: ticketDoc });
+  });
 }
