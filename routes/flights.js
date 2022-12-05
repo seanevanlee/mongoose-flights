@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const flightCtrl = require("../controllers/flights");
-const { countDocuments } = require("../models/flight");
+// const { countDocuments } = require("../models/flight");
 
 /* GET users listing. */
 router.get("/new", flightCtrl.new);
@@ -15,4 +15,5 @@ router.post("/:id", flightCtrl.addDestination);
 
 // add ticket
 // router.post("/:id/ticket", flightCtrl.addTicket);
+
 module.exports = router;
