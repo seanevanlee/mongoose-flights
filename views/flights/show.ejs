@@ -67,6 +67,14 @@
     <% } else { %>
     <h5>No Destinations Planned</h5>
     <% } %>
+    <br /><br />
+    <form action="/flights/<%= flight._id %>/ticket" method="POST">
+      <label
+        >Seat: <input name="seat" required pattern="[A-F][1-9]\d?" /> </label
+      ><br />
+      <label>Price: <input type="number" name="price" /> </label><br />
+      <br /><button type="submit">Get Yourself a Ticket Here</button>
+    </form>
     <h5>Hope you have fun!</h5>
   </body>
 </html>
