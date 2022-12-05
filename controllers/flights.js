@@ -6,10 +6,18 @@ module.exports = {
   create,
   index,
   show,
+  addDestination,
 };
 
-function newFlight(req, res) {
-  res.render("flights/new");
+// add destination within flight info
+
+function addDestination(req, res, next) {
+  Flight.findById(req.params.id, function (err, flight) {
+    flight.destinations.push(req.body);
+    flight.save(function (err, flight) {
+      res.redirect(`/flights/${flight._id}`);
+    });
+  });
 }
 
 function index(req, res) {
@@ -33,7 +41,7 @@ function create(req, res) {
   Flight.create(req.body, function (err, flightDoc) {
     if (err) {
       console.log(err);
-      return res.send("err creating so check the terminal");
+      return res.send("go check the terminal err");
     }
     // else {
     console.log(flightDoc);
@@ -45,4 +53,8 @@ function create(req, res) {
 function newFlight(req, res) {
   const newFlight = new Flight();
   res.render("flights/new", { defaultDeparture: newFlight.departs });
+}
+
+function newFlight(req, res) {
+  res.render("flights/new");
 }

@@ -7,6 +7,21 @@
     <title>Want a new seat?</title>
   </head>
   <body>
-    <input name="seat" required pattern="[A-F][1-9]\d?" />
+    <h1>New Seat Here:</h1>
+    <form
+      id="add-ticket-form"
+      action="/flights/<%= flight %>/tickets"
+      method="POST"
+    >
+      <input name="seat" required pattern="[A-F][1-9]\d?" />
+      <label>Price:</label><br />
+      <input type="number" name="price" />
+      <br />
+      <input type="submit" value="Add Ticket" />
+    </form>
   </body>
 </html>
+
+<!-- seat	String	Must be 'A1' thru 'F99' (see hints)	n/a
+price	Number	Minimum of 0	n/a
+flight	ObjectId	Include ref: 'Flight' to enable population	n/a -->
