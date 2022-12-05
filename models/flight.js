@@ -18,11 +18,11 @@ const destinationSchema = new Schema({
 const flightSchema = new Schema({
   airline: {
     type: String,
-    enum: ["American", "Southwest", "United"],
+    enum: ["American", "Delta", "Southwest", "United"],
   },
   airport: {
     type: String,
-    enum: ["AUS", "DFW", "DEN", "LAX", "SAN"],
+    enum: ["ATL", "DFW", "DEN", "LAX", "SAN"],
     default: "DEN",
   },
   flightNo: {
@@ -41,7 +41,7 @@ const flightSchema = new Schema({
 });
 
 // airline = enum to include 'American', 'Delta', 'Southwest' & 'United'. Default = N/A
-// airport = enum to include 'AUS', 'DFW', 'DEN', 'LAX' & 'SAN'. Default = 'DEN'
+// airport = enum to include 'ATL', 'DFW', 'DEN', 'LAX' & 'SAN'. Default = 'DEN'
 // flightNo = number, required between 10-9999. Default = N/A
 // departs = date, N/A validation. Default = one year from date created
 

@@ -1,0 +1,45 @@
+<%- include('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+  <title>Flight Details</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Flight Details Here</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Airline Company</th>
+          <th>Flight No.</th>
+          <th>Departure Time</th>
+          <th>Departure Airport</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= flight.airline %></td>
+          <td><%= flight.flightNo %></td>
+          <td><%= flight.departs %></td>
+          <td><%= flight.airport %></td>
+        </tr>
+      </tbody>
+    </table>
+    <br><br><br>
+    <h1>Destination Locations</h1>
+    <form id="add-destinations" method="POST"
+        action="/flights/<%= flight._id %>/destinations">
+        <label>Airport:</label>
+        <select name="airport">
+            <option value="ATL">Atlanta</option>
+            <option value="DFW">Dallas</option>
+            <option value="DEN">Denver</option>
+            <option value="LAX">Los Angeles</option>
+            <option value="SAN">San Diego</option>
+        </select>
+  </body>
+</html>
+<%- include('../partials/footer') %>
