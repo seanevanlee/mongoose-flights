@@ -10,7 +10,7 @@ router.post("/", flightCtrl.create);
 router.get("/:id", flightCtrl.show);
 
 // add destination feature
-router.post("/:id", flightCtrl.addDestination);
+router.post("/:id/destinations", flightCtrl.addDestination);
 
 // add ticket
 // router.post("/:id/ticket", flightCtrl.addTicket);

@@ -6,9 +6,9 @@ module.exports = {
 };
 
 function create(req, res) {
-  console.log("=====");
+  console.log("============");
   console.log(req.body);
-  console.log("=====");
+  console.log("============");
   Flight.findById(req.params.id, function (err, flightDoc) {
     if (err) {
       console.log(err);

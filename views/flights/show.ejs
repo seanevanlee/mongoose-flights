@@ -43,17 +43,16 @@
         <option value="LAX">Los Angeles</option>
         <option value="SAN">San Diego</option>
       </select>
+      <label>Arrival:<input type="datetime-local" name="arrival" % /> </label
+      ><br />
       <button type="submit">Add Destination</button>
-      <label>Arriving to:</label>
-      <input type="datetime-local" name="arrival" % />
-      <input type="submit" value="Arrival Date/Time" />
     </form>
     <% if (flight.destinations.length) { %>
     <table>
       <thead>
         <tr>
-          <th>Airport</th>
-          <th>Arrival</th>
+          <th>Airport and</th>
+          <th>Arrival Date</th>
         </tr>
       </thead>
       <tbody>

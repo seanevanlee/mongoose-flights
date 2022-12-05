@@ -12,9 +12,11 @@ module.exports = {
 // add destination within flight info
 
 function addDestination(req, res, next) {
+  console.log("adding destination here", req.body, req.params);
   Flight.findById(req.params.id, function (err, flight) {
     flight.destinations.push(req.body);
-    flight.save(function (err, flight) {
+    flight.save(function (err, result) {
+      console.log("flight from add destination to somewhere", flight);
       res.redirect(`/flights/${flight._id}`);
     });
   });
